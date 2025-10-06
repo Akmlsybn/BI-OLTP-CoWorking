@@ -145,9 +145,7 @@ db.serialize(() => {
     );
   `);
 
-  console.log(
-    "✅ OLTP + Dimensional Model tables for Co-Working Space created!"
-  );
+  console.log("OLTP + Dimensional Model tables for Co-Working Space created!");
 });
 
 db.close();
