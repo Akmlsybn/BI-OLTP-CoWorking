@@ -3,7 +3,7 @@ const db = new sqlite3.Database("./coworking.db");
 
 db.serialize(() => {
   console.log(
-    "🔧 Creating OLTP + Dimensional Model tables for Co-Working Space..."
+    "Creating OLTP + Dimensional Model tables for Co-Working Space..."
   );
 
   // ===== OLTP SCHEMA =====

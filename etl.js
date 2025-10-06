@@ -129,7 +129,7 @@ async function replaceAndInsert(db, tableName, rows, columns) {
 // ========== MAIN ==========
 
 async function runETL() {
-  console.log("🚀 Starting ETL for Co-Working Space...");
+  console.log("Starting ETL for Co-Working Space...");
 
   const db = openDb(DB_FILE);
   try {
@@ -181,9 +181,9 @@ async function runETL() {
       { name: "amount" },
     ]);
 
-    console.log("✅ ETL Success! Data loaded into coworking.db");
+    console.log("ETL Success! Data loaded into coworking.db");
   } catch (err) {
-    console.error("❌ ETL Error:", err);
+    console.error("ETL Error:", err);
   } finally {
     db.close();
   }

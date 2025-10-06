@@ -2,7 +2,7 @@ const sqlite3 = require("sqlite3").verbose();
 const db = new sqlite3.Database("./coworking.db");
 
 db.serialize(() => {
-  console.log("🌱 Starting static data seed for Co-Working Space...");
+  console.log("Starting static data seed for Co-Working Space...");
 
   const tables = [
     "fact_revenue",
@@ -163,7 +163,7 @@ db.serialize(() => {
     SELECT service_id, service_name FROM extra_services;
   `);
 
-  // ==== DIM DATE (unik dari bookings.start_time) ====
+  // ==== DIM DATE ====
   db.all(
     `SELECT DISTINCT DATE(start_time) AS full_date FROM bookings;`,
     (err, rows) => {
@@ -182,8 +182,8 @@ db.serialize(() => {
         );
       });
       insertDate.finalize(() => {
-        console.log("✅ Static seed inserted successfully (~50 records)!");
-        db.close(() => console.log("📁 Database closed safely."));
+        console.log("Static seed inserted successfully (~50 records)!");
+        db.close(() => console.log("Database closed safely."));
       });
     }
   );
